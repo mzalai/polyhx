@@ -76,27 +76,6 @@ const data2 = [
   { text: 'Computer', value: 50 }
 ];
 
-render(<WordCloud
-  data={data2}
-  width={800}
-  height={600}
-  options={{
-    rotations: 2,
-    rotationAngles: [-90, 0],
-  }}
-  //rotate={ ((word) => word.value % 90) - 45}
-  onWordClick={(event, d) => {
-    console.log(`onWordClick: ${d.text}`);
-  }}
-  onWordMouseOver={(event, d) => {
-    console.log(`onWordMouseOver: ${d.text}`);
-  }}
-  onWordMouseOut={(event, d) => {
-    console.log(`onWordMouseOut: ${d.text}`);
-  }}
-/>, document.getElementById('root'));
-
-
 function App() {
   const firstRowHeight = 400;
   const secondRowHeight = 600;
@@ -266,7 +245,7 @@ function App() {
           <Col span={24}>
             <Row gutter={[6, 6]}>
               <Col span={10}><Card style={{height: firstRowHeight}}><ReactEcharts option={optionA} /></Card></Col>
-              <Col span={14}><Card style={{height: firstRowHeight}}><WordCloud data={data2} style={{height: secondRowHeight, width: 500}}/></Card></Col>
+              <Col span={14}><Card style={{height: firstRowHeight}}><WordCloud height={200} data={data2} style={{width: 500}}/></Card></Col>
             </Row>
           </Col>
           <Col span={24}>
