@@ -10,20 +10,89 @@ import { render } from 'react-dom';
 import WordCloud from 'react-d3-cloud';
 
 const data2 = [
-  { text: 'Scientist', value: 438 },
-  { text: 'Consult', value: 10 },
-  { text: 'Manager', value: 30 },
-  { text: 'Director', value: 17 },
-  { text: 'Analyst', value: 103 },
-  { text: 'Engineer', value: 169 },
-  { text: 'Architect', value: 3 },
+  { text: 'Data', value: 563 },
+  { text: 'Scientist', value: 412 },
+  { text: 'Engineer', value: 159 },
+  { text: 'Senior', value: 124 },
+  { text: 'Analyst', value: 99 },
+  { text: 'Sr', value: 46 },
+  { text: 'Analytics', value: 38 },
+  { text: 'Science', value: 35 },
+  { text: 'Research', value: 32 },
+  { text: 'Associate', value: 31 },
+  { text: 'Learning', value: 29 },
+  { text: 'Principal', value: 26 },
+  { text: 'Machine', value: 25 },
+  { text: 'Manager', value: 24 },
+  { text: 'Staff', value: 20 },
+  { text: 'Lead', value: 20 },
+  { text: 'Development', value: 19 },
+  { text: 'II', value: 18 },
+  { text: '&', value: 17 },
+  { text: 'Director', value: 14 },
+  { text: 'Lab', value: 13 },
+  { text: 'Clinical', value: 12 },
+  { text: 'Software', value: 12 },
+  { text: 'Intelligence', value: 11 },
+  { text: 'Medical', value: 10 },
+  { text: 'Analytical', value: 10 },
+  { text: 'Marketing', value: 10 },
+  { text: 'Laboratory', value: 10 },
+  { text: 'R&D', value: 9 },
+  { text: 'Consultant', value: 9 },
+  { text: 'IT', value: 9 },
+  { text: 'Project', value: 8 },
+  { text: 'Food', value: 8 },
+  { text: 'Engineering', value: 8 },
+  { text: 'Oncology', value: 8 },
+  { text: 'Systems', value: 8 },
+  { text: 'Risk', value: 7 },
+  { text: 'Business', value: 7 },
+  { text: 'Biologist', value: 7 },
+  { text: 'Developer', value: 7 },
+  { text: 'Product', value: 7 },
+  { text: 'Health', value: 6 },
+  { text: 'Digital', value: 6 },
+  { text: 'Artificial', value: 6 },
+  { text: 'Security', value: 6 },
+  { text: 'Contract', value: 6 },
+  { text: 'BI', value: 6 },
+  { text: 'Platform', value: 6 },
+  { text: 'Med', value: 6 },
+  { text: 'Tech/Lab', value: 6 },
+  { text: 'Immunology', value: 6 },
+  { text: 'Scientist-', value: 6 },
+  { text: 'Big', value: 6 },
+  { text: 'Regulatory', value: 6 },
+  { text: 'Quantitative', value: 5 },
+  { text: 'Analysis', value: 5 },
+  { text: 'Insurance', value: 5 },
   { text: 'Modeler', value: 5 },
-  { text: 'Lead', value: 22 },
-  { text: 'Junior', value: 1 },
-  { text: 'Senior', value: 127 }
+  { text: 'Chemistry', value: 5 },
+  { text: 'Process', value: 5 },
+  { text: 'Safety', value: 5 },
+  { text: 'Operations', value: 5 },
+  { text: 'Environmental', value: 5 },
+  { text: 'Computer', value: 5 }
 ];
 
-render(<WordCloud data={data2} />, document.getElementById('root'));
+render(<WordCloud
+  data={data2}
+  width={1000}
+  height={750}
+  fontSize={(word) => word.value}
+  rotate={ ((word) => word.value % 90) - 45}
+  padding={2}
+  onWordClick={(event, d) => {
+    console.log(`onWordClick: ${d.text}`);
+  }}
+  onWordMouseOver={(event, d) => {
+    console.log(`onWordMouseOver: ${d.text}`);
+  }}
+  onWordMouseOut={(event, d) => {
+    console.log(`onWordMouseOut: ${d.text}`);
+  }}
+/>, document.getElementById('root'));
 
 
 function App() {
