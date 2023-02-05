@@ -5,6 +5,27 @@ import USMap from './map/Map';
 import React from "react";
 import ReactEcharts from "echarts-for-react"; 
 
+
+import { render } from 'react-dom';
+import WordCloud from 'react-d3-cloud';
+
+const data2 = [
+  { text: 'Scientist', value: 438 },
+  { text: 'Consult', value: 10 },
+  { text: 'Manager', value: 30 },
+  { text: 'Director', value: 17 },
+  { text: 'Analyst', value: 103 },
+  { text: 'Engineer', value: 169 },
+  { text: 'Architect', value: 3 },
+  { text: 'Modeler', value: 5 },
+  { text: 'Lead', value: 22 },
+  { text: 'Junior', value: 1 },
+  { text: 'Senior', value: 127 }
+];
+
+render(<WordCloud data={data2} />, document.getElementById('root'));
+
+
 function App() {
   const firstRowHeight = 400;
   const secondRowHeight = 600;
@@ -163,7 +184,7 @@ function App() {
           <Col span={24}>
             <Row gutter={[6, 6]}>
               <Col span={10}><Card style={{height: firstRowHeight}}><ReactEcharts option={optionA} /></Card></Col>
-              <Col span={14}><Card style={{height: firstRowHeight}}>1</Card></Col>
+              <Col span={14}><Card style={{height: firstRowHeight}}><WordCloud data={data2} /></Card></Col>
             </Row>
           </Col>
           <Col span={24}>
