@@ -90,34 +90,70 @@ function App() {
   };
 
   const optionD = {
-    xAxis: {
-      max: 'dataMax'
+    title: {
+      text: 'Average Salary and Rating by sector'
     },
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow'
+      }
+    },
+    legend: {
+      verticalAlign: 'bottom'
+    },
+    xAxis: [
+      {
+        type: 'value',
+        name: 'Avg Rating',
+        min: 0,
+        max: 5,
+        position: 'top',
+        axisLabel: {
+          formatter: '{value}/5'
+        }
+      },
+      {
+        type: 'value',
+        name: 'Avg Salary',
+        min: 0,
+        max: 120,
+        position: 'bottom',
+        axisLabel: {
+          formatter: '$ {value}k'
+        }
+      }
+    ],
     yAxis: {
       type: 'category',
-      data: ['Accounting & Legal', 'Aerospace & Defense', 'Agriculture & Forestry', 'Arts, Entertainment & Recreation', 
-            'Biotech & Pharmaceuticals', 'Business Services', 'Construction, Repair & Maintenance', 'Consumer Services', 
-            'Education', 'Finance', 'Government', 'Health Care', 'Information Technology', 'Insurance', 'Manufacturing', 
-            'Media', 'Mining & Metals', 'Non-Profit', 'Oil, Gas, Energy & Utilities', 'Real Estate', 'Retail', 
-            'Telecommunications', 'Transportation & Logistics', 'Travel & Tourism'],
+      data: ['Agriculture & Forestry', 'Aerospace & Defense', 'Accounting & Legal', 
+      'Mining & Metals', 'Non-Profit', 'Information Technology', 'Real Estate', 
+      'Business Services', 'Oil, Gas, Energy & Utilities', 'Transportation & Logistics', 
+      'Consumer Services', 'Travel & Tourism', 'Finance', 'Telecommunications', 
+      'Arts, Entertainment & Recreation', 'Insurance', 'Biotech & Pharmaceuticals', 
+      'Health Care', 'Media', 'Construction, Repair & Maintenance', 'Government', 
+      'Manufacturing', 'Education', 'Retail'],
       inverse: true,
     },
     series: [
       {
-        name: 'X',
+        name: 'Rating',
         type: 'bar',
-        data: ['4.00', '4.02', '4.60', '3.60', '3.51', '3.87', '3.30', '3.83', '3.13',
-               '3.74', '3.29', '3.50', '3.91', '3.54', '3.18', '3.32', '3.97', '3.91', 
-               '3.84', '3.90', '3.09', '3.67', '3.84', '3.79'],
-        label: {
-          show: true,
-          position: 'right',
-        }
+        data: ['4.60', '4.02', '4.00', '3.97', '3.91', '3.91', '3.90', '3.87', 
+              '3.84', '3.84', '3.83', '3.79', '3.74', '3.67', '3.60', '3.54', 
+              '3.51', '3.50', '3.32', '3.30', '3.29', '3.18', '3.13', '3.09'],
+        
+      },
+      {
+        name: 'Salary',
+        type: 'bar',
+        data: ['80.50', '99.06', '113.50', '104.00', '68.61', '113.19', '104.75', 
+              '97.70', '80.46', '99.31', '99.88', '69.50', '97.37', '102.33', '48.50', 
+              '105.94', '111.77', '67.62', '116.67', '26.50', '78.55', '84.04', '100.74', '99.67'],
+        
       }
     ],
-    legend: {
-      show: true
-    },
+
   };
   
   return (
