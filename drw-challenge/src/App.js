@@ -10,7 +10,7 @@ function App() {
   
 
   const toolsData = [
-    [392,740,575,566,388]
+    [392,2,167,176,388]
   ];
 
   const lineStyle = {
@@ -39,11 +39,11 @@ function App() {
     },
     radar: {
       indicator: [
-        { name: 'Python', max: 742 },
-        { name: 'R', max: 742 },
-        { name: 'Spark', max: 742 },
-        { name: 'AWS', max: 742 },
-        { name: 'Excel', max: 742 },
+        { name: 'Python', max: 400 },
+        { name: 'R', max: 400 },
+        { name: 'Spark', max: 400 },
+        { name: 'AWS', max: 400 },
+        { name: 'Excel', max: 400 },
       ],
       shape: 'circle',
       splitNumber: 5,
