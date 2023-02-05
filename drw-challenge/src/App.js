@@ -130,6 +130,9 @@ function App() {
       },
       selectedMode: 'single'
     },
+    tooltip: {
+      trigger: 'item'
+    },
     radar: {
       indicator: [
         { name: 'Python', max: 400 },
