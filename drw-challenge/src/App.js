@@ -245,7 +245,7 @@ function App() {
           <Col span={24}>
             <Row gutter={[6, 6]}>
               <Col span={10}><Card style={{height: firstRowHeight}}><ReactEcharts option={optionA} /></Card></Col>
-              <Col span={14}><Card style={{height: firstRowHeight}}><WordCloud height={200} data={data2} style={{width: 500}}/></Card></Col>
+              <Col span={14}><Card style={{height: firstRowHeight}}><WordCloud height={400} data={data2} style={{width: 500}}/></Card></Col>
             </Row>
           </Col>
           <Col span={24}>
