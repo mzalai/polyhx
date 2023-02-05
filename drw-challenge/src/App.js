@@ -88,35 +88,35 @@ function App() {
     ]
   };
 
-  const option = {
+  const optionD = {
     xAxis: {
       max: 'dataMax'
     },
     yAxis: {
       type: 'category',
-      data: ['A', 'B', 'C', 'D', 'E'],
+      data: ['Accounting & Legal', 'Aerospace & Defense', 'Agriculture & Forestry', 'Arts, Entertainment & Recreation', 
+            'Biotech & Pharmaceuticals', 'Business Services', 'Construction, Repair & Maintenance', 'Consumer Services', 
+            'Education', 'Finance', 'Government', 'Health Care', 'Information Technology', 'Insurance', 'Manufacturing', 
+            'Media', 'Mining & Metals', 'Non-Profit', 'Oil, Gas, Energy & Utilities', 'Real Estate', 'Retail', 
+            'Telecommunications', 'Transportation & Logistics', 'Travel & Tourism'],
       inverse: true,
     },
     series: [
       {
-        realtimeSort: true,
         name: 'X',
         type: 'bar',
-        data: ['1', '2', '3', '4', '5'],
+        data: ['4.00', '4.02', '4.60', '3.60', '3.51', '3.87', '3.30', '3.83', '3.13',
+               '3.74', '3.29', '3.50', '3.91', '3.54', '3.18', '3.32', '3.97', '3.91', 
+               '3.84', '3.90', '3.09', '3.67', '3.84', '3.79'],
         label: {
           show: true,
           position: 'right',
-          valueAnimation: true
         }
       }
     ],
     legend: {
       show: true
     },
-    animationDuration: 0,
-    animationDurationUpdate: 3000,
-    animationEasing: 'linear',
-    animationEasingUpdate: 'linear'
   };
   
   return (
@@ -132,7 +132,7 @@ function App() {
           <Col span={24}>
             <Row gutter={[6, 6]}>
               <Col span={14}><Card style={{height: secondRowHeight}}>1</Card></Col>
-              <Col span={10}><Card style={{height: secondRowHeight}}><ReactEcharts option={option} /></Card></Col>
+              <Col span={10}><Card style={{height: secondRowHeight}}><ReactEcharts option={optionD} /></Card></Col>
             </Row>
           </Col>
         </Row>
