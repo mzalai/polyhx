@@ -112,20 +112,20 @@ function App() {
   };
 
   const optionA = {
-    backgroundColor: '#161627',
+    backgroundColor: 'white',
     title: {
-      text: 'Tools Used',
+      text: 'Tech Skills Required',
       right: 'left',
       textStyle: {
-        color: '#eee'
+        color: 'black'
       }
     },
     legend: {
       bottom: 2,
-      data: ['Tools'],
+      data: ['Technology'],
       itemGap: 20,
       textStyle: {
-        color: '#fff',
+        color: 'black',
         fontSize: 14
       },
       selectedMode: 'single'
@@ -141,17 +141,17 @@ function App() {
       shape: 'circle',
       splitNumber: 5,
       axisName: {
-        color: 'rgb(238, 197, 102)'
+        color: 'rgb(13, 97, 186)'
       },
       splitLine: {
         lineStyle: {
           color: [
-            'rgba(238, 197, 102, 0.1)',
-            'rgba(238, 197, 102, 0.2)',
-            'rgba(238, 197, 102, 0.4)',
-            'rgba(238, 197, 102, 0.6)',
-            'rgba(238, 197, 102, 0.8)',
-            'rgba(238, 197, 102, 1)'
+            'rgba(13, 97, 186, 0.1)',
+            'rgba(13, 97, 186, 0.2)',
+            'rgba(13, 97, 186, 0.4)',
+            'rgba(13, 97, 186, 0.6)',
+            'rgba(13, 97, 186, 0.8)',
+            'rgba(13, 97, 186, 1)'
           ].reverse()
         }
       },
@@ -160,13 +160,13 @@ function App() {
       },
       axisLine: {
         lineStyle: {
-          color: 'rgba(238, 197, 102, 0.5)'
+          color: 'rgba(13, 97, 186, 0.5)'
         }
       }
     },
     series: [
       {
-        name: 'Tools',
+        name: 'Technology',
         type: 'radar',
         lineStyle: lineStyle,
         data: toolsData,
