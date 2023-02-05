@@ -78,11 +78,10 @@ const data2 = [
 
 render(<WordCloud
   data={data2}
-  width={1000}
-  height={750}
-  fontSize={(word) => word.value}
-  rotate={ ((word) => word.value % 90) - 45}
-  padding={2}
+  width={600}
+  height={400}
+  fontSize={(word) => word.value*100000}
+  //rotate={ ((word) => word.value % 90) - 45}
   onWordClick={(event, d) => {
     console.log(`onWordClick: ${d.text}`);
   }}
@@ -181,7 +180,14 @@ function App() {
 
   const optionD = {
     title: {
-      text: 'Average Salary and Rating by sector'
+      text: 'Avg Salary and Rating by Sector'
+    },
+    grid: {
+      left: -45,
+      right: 105,
+      top: 55,
+      bottom: 0,
+      containLabel: true
     },
     tooltip: {
       trigger: 'axis',
@@ -189,8 +195,9 @@ function App() {
         type: 'shadow'
       }
     },
+    height: 450,
     legend: {
-      align: 'right'
+      right:'25'
     },
     xAxis: [
       {
@@ -240,7 +247,7 @@ function App() {
         data: ['80.50', '99.06', '113.50', '104.00', '68.61', '113.19', '104.75', 
               '97.70', '80.46', '99.31', '99.88', '69.50', '97.37', '102.33', '48.50', 
               '105.94', '111.77', '67.62', '116.67', '26.50', '78.55', '84.04', '100.74', '99.67'],
-        //barMinWidth: 4
+        xAxisIndex:1
       }
     ],
 
@@ -253,13 +260,13 @@ function App() {
           <Col span={24}>
             <Row gutter={[6, 6]}>
               <Col span={10}><Card style={{height: firstRowHeight}}><ReactEcharts option={optionA} /></Card></Col>
-              <Col span={14}><Card style={{height: firstRowHeight}}><WordCloud data={data2} /></Card></Col>
+              <Col span={14}><Card style={{height: firstRowHeight}}><WordCloud data={data2} style={{height: secondRowHeight, width: 500}}/></Card></Col>
             </Row>
           </Col>
           <Col span={24}>
             <Row gutter={[6, 6]}>
               <Col span={14}><Card style={{height: secondRowHeight}}><USMap /></Card></Col>
-              <Col span={10}><Card style={{height: secondRowHeight}}><ReactEcharts option={optionD} /></Card></Col>
+              <Col span={10}><Card style={{height: secondRowHeight}}><ReactEcharts option={optionD} style={{height: secondRowHeight, width: 500}} /></Card></Col>
             </Row>
           </Col>
         </Row>
